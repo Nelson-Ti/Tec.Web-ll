@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta charset= latin-1>
+<script>
+function soma()
+{
+var a=document.getElementById("a");
+var b=document.getElementById("b");
+var resultado= parseFloat(a.value) + parseFloat(b.value);
+document.getElementById("resultado").innerHTML=resultado;
+}
+
+function multiplicacao()
+{
+var a=document.getElementById("a");
+var b=document.getElementById("b");
+var resultado= parseFloat(a.value) * parseFloat(b.value);
+document.getElementById("resultado").innerHTML=resultado;
+}
+function subtracao()
+{
+var a=document.getElementById("a");
+var b=document.getElementById("b");
+var resultado= parseFloat(a.value) - parseFloat(b.value);
+document.getElementById("resultado").innerHTML=resultado;
+}
+function divisao()
+{
+var a=document.getElementById("a");
+var b=document.getElementById("b");
+var resultado= parseFloat(a.value) / parseFloat(b.value);
+document.getElementById("resultado").innerHTML=resultado;
+}
+function porcentagem()
+{
+var a=document.getElementById("a");
+var b=document.getElementById("b");
+var resultado= parseFloat(a.value) * parseFloat(b.value) /100;
+
+document.getElementById("resultado").innerHTML=resultado;
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Calculadora</h1>
+
+<p>A: </p>
+<p><input type=text id=a value=0> </p>
+<p>B: </p>
+<p><input type=text id=b value=0> </p>
+<br>
+<button onclick="soma()">Soma</button>
+<button onclick="subtracao()">Subtracao</button>
+<br>
+<button onclick="divisao()">Divisao</button>
+<button onclick="multiplicacao()">Multiplicacao</button>
+<button onclick="porcentagem()">Porcentagem</button>
+    <br><br><hr> 
+    <div id=resultado></div>
+</body>
+</html>
+
+
+-- Editor:
+JsFiddle
