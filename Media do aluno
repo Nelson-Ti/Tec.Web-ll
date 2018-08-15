@@ -1,0 +1,49 @@
+<html>
+
+  <head>
+    <meta charset=l atin-1>
+    <script>
+      function media() {
+        var a = document.getElementById("a");
+        var b = document.getElementById("b");
+        var c = document.getElementById("c");
+        var d = document.getElementById("d");
+        var resultado = (parseFloat(a.value) + parseFloat(b.value) + parseFloat(c.value) + parseFloat(d.value)) / 4;
+        document.getElementById("resultado").innerHTML = resultado;
+
+
+        if (resultado >= 6) {
+          alert("aprovado, Parabéns!!");
+        } else {
+          alert("reprovado, Estude mais ano que vem!!");
+        }
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <h1>Média do Aluno</h1>
+    <h2> Escolar </h2>
+    
+    
+    <p>1* Bimestre: </p>
+    <p><input type=text id=a value=''> </p>
+    <p>2* Bimestre: </p>
+    <p><input type=text id=b value=''> </p>
+    <p>3* Bimestre: </p>
+    <p><input type=text id=c value=''> </p>
+    <p>4* Bimestre: </p>
+    <p><input type=text id=d value=''> </p>
+    <br>
+    
+    <button onclick="media()">Media</button>
+
+    <br><br>
+    <hr>
+    <div id=resultado></div>
+  </body>
+
+</html>
