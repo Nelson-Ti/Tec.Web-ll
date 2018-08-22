@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Recepcao</title>  
+<script>
+var nome_vetor = new Array();
+nome_vetor.push("test");
+nome_vetor.push("test1");
+nome_vetor.push("test2");
+nome_vetor [3]='aqui1';
+
+console.log(nome_vetor);
+var objeto_estruturado =[
+{
+"nome": "Nelson",
+"idade": "20",
+"cidade": "Rio De janeiro",
+},
+{
+"nome": "Ana",
+"idade": "25",
+"cidade": "Rio De janeiro",
+
+}
+];
+console.log(objeto_estruturado);
+
+</script>
+
+</head>
+<body>
+<p>
+test
+</p>
+  </body>
+</html>
