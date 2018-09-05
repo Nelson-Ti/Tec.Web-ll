@@ -1,0 +1,70 @@
+index.php
+
+<!DOCTYPE HTML>
+<html>
+ <head> <meta charset=latin-1>
+ <center>
+ <title>Formulario de entrada</title>
+ </head>
+ <body>
+ <br>
+ <br>
+ <br>
+ <br>
+     <h1> TELA DE LOGIN </h1>
+	 <form action=teste.php>
+	 <p> Nome </p>
+	 <input type=text name=nome>
+	 <br>
+	 
+	 <p> Perfil </p>
+	 <input type=radio name=valor value=1> Professor
+	 
+     <input type=radio name=valor value=2> Aluno
+	 
+	 <input type=radio name=valor value=3> Funcionário
+	 
+	  <input type=radio name=valor value=4> Presidente
+	<br><br>
+	 <input type=submit  value=Entrar> 
+	
+</center>
+ </body>
+</html>
+
+
+--------
+
+teste.php
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <title>Exemplo</title>
+ <style>
+     .cor1{color:blue}
+     .cor2{color:red}
+	 .cor3{color:green}
+	 .cor4{color:purple}
+     </style>
+ </head>
+ <body>
+    
+ <?php
+ $nome=$_GET["nome"];
+ $valor=$_GET['valor'];
+ echo "<h1> Bem vindo $nome !!! </h1>";
+ 
+
+ if ($valor == 1){
+     echo "<h2 class=cor1> boa noite Professor </h2>";
+ }else if ($valor==2){
+    echo "<h2 class=cor2> boa noite aluno </h2>";
+	}else if ($valor==3){
+    echo "<h2 class=cor3> boa noite Funcionario </h2>";
+	}else{
+	echo "<h2 class=cor4> boa noite Presidente </h2>";
+	
+ }
+ ?>
+ </body>
+</html>
