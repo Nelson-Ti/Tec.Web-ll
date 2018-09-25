@@ -1,0 +1,35 @@
+<?php
+
+echo "<h2>Aula 8 - foreach</h2>";
+
+$vetor1 = array ("nome" => "andre", "idade" => 43, "salario" => 7000.01);
+
+$vetor2 = array(
+["codigo" => "1", "descricao" => "add"],
+["codigo" => "2", "descricao" => "index"],
+["codigo" => "3", "descricao" => "edit"]
+				);
+echo "<table border = 1>";
+echo "<tr><th>Código</th><th>Descrição</th></tr>";
+foreach($vetor2 as $i)
+{
+	echo "<tr><td>".$i["codigo"]."</td>";
+	echo "<td>".$i["descricao"]."</td></tr>";
+}
+echo "</table>";
+
+echo "<table>";
+$vetor1 = array ("a", "b", "c");
+echo "<br><br> retorno=".exibe($vetor1, $vetor2);
+
+function exibe($v1, $v2, $t=null)
+{
+echo "<pre>";
+var_export ($v1);
+echo "</pre><br>";
+echo json_encode($v2);
+return 10;
+
+};
+
+?>
