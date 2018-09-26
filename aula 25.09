@@ -1,0 +1,63 @@
+<?php
+
+class Postgres{
+	public function exibesql(){
+		echo "<br>sql1";
+	}
+}
+
+class Mysql{
+	public function exibesql(){
+		echo "<br>sql2";
+	}
+}
+
+class SQLserver{
+	public function exibesql(){
+		echo "<br>sql3";
+	}
+}
+
+
+
+class Banco{
+	private $conecta, $banco;
+	public function __construct($conecta=null) {
+		$this->setConecta($conecta);
+	}	
+	public function setConecta($conecta){
+		$this->conecta = $conecta;
+		
+		if ($conecta =="postgres"){
+			$this->banco = new Postgres();
+		}	
+		
+		else if ($conecta =="mysql"){
+			$this->banco = new Mysql();
+		}
+		else if ($conecta =="sqlserver"){
+			$this->banco = new SQLserver();
+		}
+
+	}
+
+
+
+
+	public function exibesql(){
+		$this->banco->exibesql();
+	}
+
+
+
+}
+
+$b = new Banco("postgres");
+$b->exibesql();
+
+$b = new Banco("mysql");
+$b->exibesql();
+
+$b = new Banco("sqlserver");
+$b->exibesql();
+?>
