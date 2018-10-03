@@ -13,8 +13,7 @@ Site: www.W3Cschool.com
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -32,9 +31,29 @@ Site: www.W3Cschool.com
 				}else if(item.posicionamento=="geral") {
 					$("#clinico").append(html);
 				}else if(item.posicionamento=="emergencia") {
-					$("#emergencia_caixa").append(html);					
+					$("#emergencia_caixa").append(html);	
+				}else if(item.posicionamento=="alta") {
+					$("#alta_bem").append(html);				
+				}else if(item.posicionamento=="geral") {
+					$("#clinico").append(html);
+				}else if(item.posicionamento=="emergencia") {
+					$("#emergencia_caixa").append(html);	
 				}
+				
+				
+
+
 			});//for each
+
+					//if (item.posicionamento=="alta") {
+				//	$("#alta_bem").append(html);
+			//	}else if(item.posicionamento=="geral") {
+				//	$("#clinico").append(html);
+			//	}else if(item.posicionamento=="emergencia") {
+			//		$("#emergencia_caixa").append(html);	
+			//	}
+			//	});
+
 			
 			$("#geral").click(function() {
 				var selecionado = $("#triagem option:selected").val();
@@ -44,9 +63,19 @@ Site: www.W3Cschool.com
 			});
 			
 			$("#emergencia").click(function() {
-				alert("emergencia");
+				var selecionado = $("#triagem option:selected").val();
+				html = "<option value='"+selecionado+"'>"+selecionado+"</option>";
+				$("#emergencia_caixa").append(html);
+			});
+
+			$("#alta").click(function() {
+				var selecionado = $("#triagem option:selected").val();
+				html = "<option value='"+selecionado+"'>"+selecionado+"</option>";
+				$("#alta_bem").append(html);
 			});
 			
+			
+
 		});//fim document
 
     </script>
@@ -55,7 +84,7 @@ Site: www.W3Cschool.com
     </style>
   </head>
   <body>
-    <h1>Clínica vai com Deus</h1>
+    <h1>Clínica </h1>
     <div class=container>
 		<div class=row>
 			<div class=col>
@@ -72,6 +101,7 @@ Site: www.W3Cschool.com
 					Emergencia
 				</button>
 			</div>
+
 			<div class=col>
 				<h1>Clínico Geral</h1>
 				<select id=clinico multiple>
@@ -80,6 +110,7 @@ Site: www.W3Cschool.com
 				<select id=emergencia_caixa multiple>
 				</select>
 			</div>
+
 			<div class="col text-center">
 				<button class="btn btn-success" id=alta>
 					Alta
@@ -87,7 +118,7 @@ Site: www.W3Cschool.com
 			</div>
 			<div class="col">
 				<h1>Alta</h1>
-				<select id=fim multiple>
+				<select id=alta_bem multiple>
 				</select>
 			</div>
 			
@@ -100,6 +131,7 @@ Site: www.W3Cschool.com
     
   </body>
 </html>
+
 
 
 
