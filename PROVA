@@ -1,0 +1,160 @@
+//revisao.html
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="revisao.js"></script>
+    <script>
+
+
+		var html;
+		$( document ).ready(function() {
+			$.each(objeto, function(i, item) {
+			
+	html = "<option value='"+item.nome+"'>"+item.nome+"</option>";
+				
+				if (item.posicionamento=="triagem") {
+					$("#triagem").append(html);
+				//}else if(item.posicionamento=="geral") {
+					//$("#clinico").append(html);
+				//}else if(item.posicionamento=="emergencia") {
+					//$("#emergencia_caixa").append(html);
+				//}else if(item.posicionamento=="alta") {
+					//$("#fim").append(html);					
+				}
+			});//for each
+
+
+
+
+
+
+
+			
+			$("#geral").click(function() {
+				var selecionado = $("#triagem option:selected").val();
+		html = "<option value='"+selecionado+"'>"+selecionado+"</option>";
+				$("#clinico").append(html);
+				//console.log(selecionado);
+			});
+			
+			$("#emergencia").click(function() {
+				var selecionado = $("#triagem option:selected").val();
+				html = "<option value='"+selecionado+"'>"+selecionado+"</option>";
+				$("#emergencia_caixa").append(html);
+			});
+
+			$("#alta").click(function() {
+				var selecionado = $("#clinico option:selected").val();
+				html = "<option value='"+selecionado+"'>"+selecionado+"</option>";
+				$("#fim").append(html);
+			});
+			
+
+		});//fim document
+
+
+		
+
+			
+			
+
+
+
+
+    </script>
+    <style>
+    .objeto {border: solid 1px; background-color:#C3C3C3; }
+    </style>
+  </head>
+  <body>
+    <h1>Clínica vai com Deus</h1>
+    <div class=container>
+		<div class=row>
+			<div class=col>
+				<h1>Triagem</h1>
+				<select id=triagem multiple>
+				</select>
+			</div>
+			<div class=col>
+				<button class="btn btn-primary" id=geral>
+					Clínico Geral
+				</button>
+				<br><br>
+				<button class="btn btn-danger" id=emergencia>
+					Emergencia
+				</button>
+			</div>
+			<div class=col>
+				<h1>Clínico Geral</h1>
+				<select id=clinico multiple>
+				</select>
+				<h1>Emergência</h1>
+				<select id=emergencia_caixa multiple>
+				</select>
+			</div>
+			<div class="col text-center">
+				<button class="btn btn-success" id=alta>
+					Alta
+				</button>
+			</div>
+			<div class="col">
+				<h1>Alta</h1>
+				<select id=fim multiple>
+				</select>
+			</div>
+			
+		</div><!--linha-->
+    
+    </div><!--container-->
+
+    
+    
+    
+  </body>
+</html>
+
+---------------------------------------------
+
+//revisao.js
+
+var objeto = [
+	{
+	 "nome": "JOÃO",
+	 "posicionamento" : "triagem"
+	},
+	{
+	 "nome": "MARIA",
+	 "posicionamento" : "triagem"
+	},
+	{
+	 "nome": "MARCOS",
+	 "posicionamento" : "triagem"
+	},
+	{
+	 "nome": "FERNANDO",
+	 "posicionamento" : "triagem"
+	},
+	{
+	 "nome": "CAROL",
+	 "posicionamento" : "triagem"
+	},
+	{
+		"nome": "JOHN",
+	 "posicionamento" : "triagem"
+	   },
+];
+
+
