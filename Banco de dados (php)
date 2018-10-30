@@ -1,0 +1,29 @@
+<?php
+$dsn = 'mysql:dbname=aulaphp;host=127.0.0.1';
+$user = 'root';
+$password = '';
+try {
+ $dbh = new PDO($dsn, $user, $password);
+ echo "conectou";
+} catch (PDOException $e) {
+ echo 'Connection failed: ' . $e->getMessage();
+}
+
+$sql="insert into usuario(login,senha)
+values('Nelson' , '123')";
+     
+$count = $dbh->exec($sql);
+echo "<p>$count registro foi atualizado</p>";
+
+
+$sql = 'SELECT * FROM  usuario ORDER BY login';
+foreach ($dbh->query($sql) as $row) {
+    echo $row['id'] . "<br>";
+    echo $row['login'] . "<br>";
+    echo $row['senha'] . "<br><hr>";
+
+}
+
+
+
+?>
