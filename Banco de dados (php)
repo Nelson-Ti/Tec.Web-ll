@@ -27,3 +27,33 @@ foreach ($dbh->query($sql) as $row) {
 
 
 ?>
+
+
+-----------------------
+<?php
+
+class Banco{
+private $pdo, $dsn;
+function __construct(){
+$this->dsn = 'mysql:dbname=aulaphp;host=127.0.0.1';
+$this->conecta();
+}
+
+function conecta (){
+    $user = 'root';
+    $password = ''; 
+try {
+ $this->pdo = new PDO($this->dsn, $user, $password);
+} catch (PDOException $e) {
+ echo 'Connection failed: ' . $e->getMessage();
+}   
+
+} 
+function execultar($sql){
+    return $this->pdo->exec($sql);
+}
+function consultar($sql){
+    return $this->pdo->query($sql);
+}
+}
+?>
